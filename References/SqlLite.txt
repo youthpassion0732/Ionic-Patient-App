@@ -1,0 +1,4 @@
+https://blog.nraboy.com/2014/11/use-sqlite-instead-local-storage-ionic-framework/
+http://ngcordova.com/docs/plugins/sqlite/
+https://github.com/litehelpers/Cordova-sqlite-storage
+https://blog.nraboy.com/2015/03/create-todo-list-mobile-app-using-ionic-framework/
