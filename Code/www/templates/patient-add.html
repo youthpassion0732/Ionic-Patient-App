@@ -1,0 +1,46 @@
+<ion-view view-title="{{title}}" cache-view="false">
+  <ion-content class="padding">
+    <div class="list">
+      <form name="addPatientForm">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">First Name</span>
+          <input type="text" name="firstName" placeholder="First Name" ng-model="patient.firstName" required>
+          <div ng-show="addPatientForm.firstName.$touched" ng-messages="addPatientForm.firstName.$error" style="color:red" role="alert">
+            <div ng-message="required">Enter first name</div>
+          </div>
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Last Name</span>
+          <input type="text" name="lastName" placeholder="Last Name" ng-model="patient.lastName" required>
+          <div ng-show="addPatientForm.lastName.$touched" ng-messages="addPatientForm.lastName.$error" style="color:red" role="alert">
+            <div ng-message="required">Enter last name</div>
+          </div>
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Comments</span>
+          <textarea name="comments" placeholder="Comments" ng-model="patient.lastText" required></textarea>
+          <div ng-show="addPatientForm.comments.$touched" ng-messages="addPatientForm.comments.$error" style="color:red" role="alert">
+            <div ng-message="required">Enter comments</div>
+          </div>
+        </label>
+
+        <div class="item tabs tabs-secondary tabs-icon-left">
+          <a class="tab-item" href="#" ng-click="takePicture()">
+            <i class="icon ion-camera"></i> Take Picture
+          </a>
+          <a class="tab-item" href="#" ng-click="selectPicture()">
+            <i class="icon ion-share"></i> Select Picture
+          </a>
+        </div>
+
+        <div class="card" ng-show="patient.face !==''">
+          <div class="item item-image">
+            <img ng-src="{{patient.face}}" width="150" height="150">
+          </div>
+        </div>
+
+        <button class="button button-block button-positive" ng-click="save(addPatientForm)">Save Patient</button>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>
